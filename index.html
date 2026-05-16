@@ -1,0 +1,368 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Personal Portfolio</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/0815a88854.js" crossorigin="anonymous"></script>
+
+  <!-- EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+  <!-- EMAILJS INIT -->
+  <script>
+    (function () {
+      emailjs.init("8y2sQCVk_kb988C19");
+    })();
+  </script>
+
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <div id="header">
+
+    <div class="container">
+
+      <nav>
+
+        <ul id="sidemenu">
+
+          <li><a href="#header">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+
+          <i class="fas fa-times" onclick="closemenu()"></i>
+
+        </ul>
+
+        <i class="fas fa-bars" onclick="openmenu()"></i>
+
+      </nav>
+
+      <div class="header-text">
+
+        <p>Front End Web Developer</p>
+
+        <h1>
+          HELLO EVERYONE! <br>
+          I'm LOGESWARI R <br>
+          (<span>SMVEC</span>, 2027)
+        </h1>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- ABOUT -->
+  <div id="about">
+
+    <div class="container">
+
+      <div class="row">
+
+        <div class="about-col-1"></div>
+
+        <div class="about-col-2">
+
+          <h1 class="sub-title">About Me</h1>
+
+          <p>
+            Hi! I'm LOGESWARI R. I'm an undergraduate student at
+            Sri Manakula Vinayagar Engineering College,
+            majoring in Information Technology.
+
+            I have a strong passion for Full Stack Web Development
+            and MERN Stack Development. I enjoy creating engaging
+            and user-friendly websites and also have a keen interest
+            in problem-solving.
+          </p>
+
+          <!-- TAB TITLES -->
+          <div class="tab-titles">
+
+            <p class="tab-links active-link"
+               onclick="opentab('education', this)">
+               Education
+            </p>
+
+            <p class="tab-links"
+               onclick="opentab('skills', this)">
+               Skills
+            </p>
+
+            <p class="tab-links"
+               onclick="opentab('experience', this)">
+               Experience
+            </p>
+
+          </div>
+
+          <!-- EDUCATION -->
+          <div class="tab-contents active-tab" id="education">
+
+            <ul>
+
+              <li>
+                <span>2023 - 2027</span><br>
+                B.Tech Information Technology - SMVEC<br>
+                CGPA: 8.66
+              </li>
+
+              <li>
+                <span>2022 - 2023</span><br>
+                HSC - Sri Sankara Vidyalaya<br>
+                Percentage: 88.33%
+              </li>
+
+              <li>
+                <span>2020 - 2021</span><br>
+                SSLC - Sri Sankara Vidyalaya<br>
+                Percentage: 85%
+              </li>
+
+            </ul>
+
+          </div>
+
+          <!-- SKILLS -->
+          <div class="tab-contents" id="skills">
+
+            <ul>
+
+              <li>
+                <span>Programming</span><br>
+                Java, Python, HTML, CSS, JavaScript, SQL
+              </li>
+
+              <li>
+                <span>Tools</span><br>
+                VS Code, Git, GitHub
+              </li>
+
+              <li>
+                <span>Database</span><br>
+                MongoDB
+              </li>
+
+            </ul>
+
+          </div>
+
+          <!-- EXPERIENCE -->
+          <div class="tab-contents" id="experience">
+
+            <ul>
+
+              <li>
+                <span>Summer Internship - Hattussa IT Solutions</span><br>
+                Content and Application Support Intern
+              </li>
+
+            </ul>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- CONTACT -->
+  <div id="contact">
+
+    <div class="container">
+
+      <div class="row">
+
+        <!-- LEFT -->
+        <div class="contact-left">
+
+          <h1 class="sub-title">Contact Me</h1>
+
+          <p>
+            <i class="fas fa-envelope"></i>
+            logeswarir871@gmail.com
+          </p>
+
+          <!-- SOCIAL -->
+          <div class="social-icons">
+
+            <a href="https://github.com/LOGESWARI002" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
+
+            <a href="https://www.linkedin.com/in/logeswari-r-8b13a9331"
+               target="_blank">
+              <i class="fab fa-linkedin"></i>
+            </a>
+
+          </div>
+
+          <!-- RESUME -->
+          <a href="resume.pdf" download class="btn btn2">
+
+            <i class="fas fa-download"></i>
+            Download Resume
+
+          </a>
+
+        </div>
+
+        <!-- RIGHT -->
+        <div class="contact-right">
+
+          <form id="contact-form">
+
+            <input
+              type="text"
+              name="from_name"
+              placeholder="Your Name"
+              required
+            >
+
+            <input
+              type="email"
+              name="email"
+              placeholder="Your Email"
+              required
+            >
+
+            <textarea
+              name="message"
+              rows="6"
+              placeholder="Your Message"
+              required></textarea>
+
+            <button type="submit" class="btn btn2">
+              Send Message
+            </button>
+
+          </form>
+
+          <span id="msg"></span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <div class="copyright">
+
+      <p>
+        Designed and Developed by LOGESWARI R
+      </p>
+
+    </div>
+
+  </div>
+
+  <!-- TAB SCRIPT -->
+  <script>
+
+    const tablinks = document.getElementsByClassName("tab-links");
+    const tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname, element) {
+
+      for (let tablink of tablinks) {
+        tablink.classList.remove("active-link");
+      }
+
+      for (let tabcontent of tabcontents) {
+        tabcontent.classList.remove("active-tab");
+      }
+
+      element.classList.add("active-link");
+
+      document.getElementById(tabname)
+      .classList.add("active-tab");
+    }
+
+  </script>
+
+  <!-- MOBILE MENU -->
+  <script>
+
+    const sidemenu = document.getElementById("sidemenu");
+
+    function openmenu() {
+      sidemenu.style.right = "0";
+    }
+
+    function closemenu() {
+      sidemenu.style.right = "-250px";
+    }
+
+  </script>
+
+  <!-- EMAIL SCRIPT -->
+  <script>
+
+    const form = document.getElementById("contact-form");
+    const msg = document.getElementById("msg");
+
+    form.addEventListener("submit", function(e){
+
+      e.preventDefault();
+
+      msg.innerHTML = "Sending...";
+
+      emailjs.send(
+        "service_pqbvfhj",
+        "template_ry0eqxw",
+        {
+          from_name: form.from_name.value,
+          email: form.email.value,
+          message: form.message.value
+        },
+        "8y2sQCVk_kb988C19"
+      )
+
+      .then(function(response){
+
+        console.log("SUCCESS!", response);
+
+        msg.style.color = "#61b752";
+        msg.innerHTML = "✅ Message Sent Successfully!";
+
+        form.reset();
+
+        setTimeout(() => {
+          msg.innerHTML = "";
+        }, 5000);
+
+      })
+
+      .catch(function(error){
+
+        console.log("FAILED...", error);
+
+        msg.style.color = "red";
+        msg.innerHTML = "❌ Failed to send message";
+
+      });
+
+    });
+
+  </script>
+
+</body>
+</html>
